@@ -20,7 +20,7 @@ func printTreeAst(node *ast.Node, depth int) {
 		literal = node.Text()
 	}
 
-	fmt.Printf("%s,%d,%d,%s", node.Type().String(), node.Offset(), node.Endoffset(), literal)
+	fmt.Printf("%s\t%d\t%d\t%s", node.Type().String(), node.Offset(), node.Endoffset(), literal)
 	fmt.Printf("\n")
 	for _, n := range node.Children(selector.Any) {
 		printTreeAst(n, depth+1)
